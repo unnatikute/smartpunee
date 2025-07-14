@@ -1,0 +1,92 @@
+/* Header background with fresh gradient */
+.header {
+  background: linear-gradient(to right, #e0f7fa, #fce4ec, #fff9c4);
+  padding: 14px 28px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Navigation container layout */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Logo styling */
+.logo a,
+.logo-link {
+  font-size: 28px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #0097a7; /* teal */
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.logo a:hover,
+.logo-link:hover {
+  color: #00bfa5; /* light teal */
+}
+
+/* Navigation list layout */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+
+/* Base nav link style */
+.nav-link {
+  text-decoration: none;
+  color: #37474f; /* dark blue-gray */
+  font-weight: 600;
+  font-size: 16px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+/* Hover effect */
+.nav-link:hover {
+  background-color: #e1f5fe; /* light blue */
+  color: #0277bd; /* deep blue */
+  transform: scale(1.05);
+}
+
+/* Active link style */
+.nav-link.active {
+  background-color: #ffe0b2; /* peach */
+  border-color: #ff7043;      /* coral */
+  color: #bf360c;             /* dark coral */
+  box-shadow: 0 3px 6px rgba(255, 112, 67, 0.3);
+}
+
+/* Responsive behavior for smaller screens */
+@media screen and (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .nav-links li a {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+  }
+}
