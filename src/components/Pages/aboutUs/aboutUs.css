@@ -1,0 +1,65 @@
+.about-page {
+  font-family: 'Segoe UI', sans-serif;
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
+  background: #fff;
+  color: #333;
+}
+
+.about-hero {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.about-hero h1 {
+  font-size: 36px;
+  color: #7b1fa2;
+}
+
+.about-hero p {
+  font-size: 18px;
+  color: #555;
+  margin-top: 10px;
+}
+
+.about-section {
+  margin-bottom: 30px;
+}
+
+.about-section h2 {
+  font-size: 24px;
+  color: #6a1b9a;
+  margin-bottom: 10px;
+}
+
+.about-section p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.highlight-section ul {
+  padding-left: 20px;
+  list-style: none;
+}
+
+.highlight-section li {
+  font-size: 16px;
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 24px;
+}
+
+.highlight-section li::before {
+  content: "✅";
+  position: absolute;
+  left: 0;
+  color: #388e3c;
+}
+
+.about-footer {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 16px;
+  color: #777;
+}

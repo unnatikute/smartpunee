@@ -1,0 +1,86 @@
+/* General layout */
+.home-page {
+  font-family: Arial, sans-serif;
+}
+
+/* 1️⃣ Hero Slider */
+.hero-slider {
+  margin-bottom: 40px;
+}
+
+.highlight-slide {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.highlight-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  filter: brightness(0.7);
+}
+
+.highlight-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.highlight-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.highlight-text p {
+  font-size: 1.2rem;
+}
+
+/* 2️⃣ About Section */
+.about-section {
+  padding: 40px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.about-section h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.about-section p {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* 3️⃣ Review Slider */
+.review-slider-section {
+  padding: 40px;
+  background-color: #f2f2f2;
+  text-align: center;
+}
+
+.review-slider-section h2 {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.review-slide {
+  padding: 20px;
+}
+
+.review-comment {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #444;
+}
+
+.reviewer-name {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #666;
+}

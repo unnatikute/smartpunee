@@ -7,7 +7,10 @@ function Header() {
     <header className="header">
       <nav className="nav-container">
         <div className="logo">
-          <NavLink to="/" className="nav-link logo-link">LocalOffers</NavLink>
+          <NavLink to="/" className="logo-link">
+            <img src="/images/logo.png" alt="LocalOffers Logo" className="logo-image" />
+            <span className="logo-text"></span>
+          </NavLink>
         </div>
         <ul className="nav-links">
           <li>
@@ -20,10 +23,18 @@ function Header() {
           </li>
           <li>
             <NavLink
-              to="/offers"
+              to="/about"
               className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
             >
-              Offers
+              About Us
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/city"
+              className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
+            >
+              City
             </NavLink>
           </li>
           <li>
