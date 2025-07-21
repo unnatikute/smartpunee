@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './city.css';
 
 const shopData = [
@@ -35,7 +36,16 @@ const shopData = [
 const City = () => {
   const [searchCity, setSearchCity] = useState('');
   const [category, setCategory] = useState('All');
+  const navigate = useNavigate();
 
+  // 🔒 Login check on component mount
+  useEffect(() => {
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+    if (!isLoggedIn || isLoggedIn !== 'true') {
+      navigate('/login'); // Redirect to login if not authenticated
+    }
+  }, [navigate]);
+  
   const categories = ['All', ...new Set(shopData.map(shop => shop.category))];
 
   const filteredShops = shopData.filter(shop =>
@@ -45,12 +55,12 @@ const City = () => {
 
   return (
     <div className="city-page">
-      <h2>Find City-Wise Local Offers</h2>
+      <h1 className="city-title">🏙️ Discover Local Offers by City</h1>
 
       <div className="city-filters">
         <input
           type="text"
-          placeholder="Enter city name..."
+          placeholder="🔍 Enter city name (e.g., Pune)"
           value={searchCity}
           onChange={(e) => setSearchCity(e.target.value)}
           className="city-search-input"
@@ -72,14 +82,15 @@ const City = () => {
           filteredShops.map((shop, index) => (
             <div key={index} className="shop-card">
               <img src={shop.imageUrl} alt={shop.name} className="shop-image" />
-              <h4>{shop.name}</h4>
-              <p>📍 {shop.city}</p>
-              <p>🛍️ {shop.category}</p>
-              <p className="shop-offer">🎉 {shop.offer}</p>
+              <div className="shop-details">
+                <h3 className="shop-name">{shop.name}</h3>
+                <p className="shop-meta">📍 {shop.city} | 🛍️ {shop.category}</p>
+                <p className="shop-offer">🎉 {shop.offer}</p>
+              </div>
             </div>
           ))
         ) : (
-          <p>No shops or offers found in this city/category.</p>
+          <p className="no-results">🚫 No shops or offers found for this city/category.</p>
         )}
       </div>
     </div>

@@ -1,8 +1,12 @@
-import React from 'react';
+import React , { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './header.css';
 
-function Header() {
+const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const handleNavClick = () => {
+    setIsMenuOpen(false); // close dropdown when a link is clicked
+  };
   return (
     <header className="header">
       <nav className="nav-container">
@@ -12,11 +16,17 @@ function Header() {
             <span className="logo-text"></span>
           </NavLink>
         </div>
-        <ul className="nav-links">
+        <div className="hamburger" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <div className="bar"></div>
+          <div className="bar"></div>
+          <div className="bar"></div>
+        </div>
+        <ul className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
           <li>
             <NavLink
               to="/"
-              className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
+              className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link' }
+              onClick={handleNavClick}
             >
               Home
             </NavLink>
@@ -25,6 +35,7 @@ function Header() {
             <NavLink
               to="/about"
               className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
+              onClick={handleNavClick}
             >
               About Us
             </NavLink>
@@ -33,6 +44,7 @@ function Header() {
             <NavLink
               to="/city"
               className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
+              onClick={handleNavClick}
             >
               City
             </NavLink>
@@ -41,6 +53,7 @@ function Header() {
             <NavLink
               to="/categories"
               className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
+              onClick={handleNavClick}
             >
               Categories
             </NavLink>
@@ -49,6 +62,7 @@ function Header() {
             <NavLink
               to="/contact"
               className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
+              onClick={handleNavClick}
             >
               Contact
             </NavLink>
@@ -57,6 +71,7 @@ function Header() {
             <NavLink
               to="/login"
               className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
+              onClick={handleNavClick}
             >
               Login
             </NavLink>
@@ -65,6 +80,6 @@ function Header() {
       </nav>
     </header>
   );
-}
+};
 
 export default Header;

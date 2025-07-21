@@ -21,6 +21,9 @@ const Contact = () => {
 
       <div className="contact-container">
         {/* Contact Form */}
+        {submitted ? (
+        <div className="success-message">✅ Message sent successfully!</div>
+      ) : (
         <form className="contact-form" onSubmit={handleSubmit}>
           <label>Name</label>
           <input type="text" placeholder="Your name" required />
@@ -32,13 +35,8 @@ const Contact = () => {
           <textarea placeholder="Write your message here..." rows="5" required />
 
           <button type="submit">Send Message</button>
-          {submitted && (
-            <p style={{ color: 'green', marginTop: '10px', fontWeight: '500' }}>
-              ✅ Message sent successfully!
-            </p>
-          )}
-        </form>
-
+           </form>
+        )}
         {/* Contact Info */}
         <div className="contact-info">
           <h3>Contact Details</h3>
