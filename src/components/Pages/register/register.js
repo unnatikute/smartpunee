@@ -41,7 +41,7 @@ const Register = () => {
     return err;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const err = validate();
     if (Object.keys(err).length > 0) {
@@ -49,9 +49,34 @@ const Register = () => {
       return;
     }
 
-    console.log('Submitted Data:', form); // Replace with Firebase or API logic
-    setSubmitted(true);
-    setErrors({});
+    const formData = new FormData();
+    formData.append('shopName', form.shopName);
+    formData.append('ownerName', form.ownerName);
+    formData.append('phone', form.phone);
+    formData.append('email', form.email);
+    formData.append('city', form.city);
+    formData.append('category', form.category);
+    formData.append('offer', form.offer);
+    if (form.image) {
+      formData.append('image', form.image);
+    }
+
+    try {
+      const response = await fetch('http://localhost:5000/register', {
+        method: 'POST',
+        body: formData
+      });
+
+      if (response.ok) {
+        console.log('✅ Shop saved with image!');
+        setSubmitted(true);
+        setErrors({});
+      } else {
+        console.error('❌ Server error');
+      }
+    } catch (error) {
+      console.error('❌ Network error:', error);
+    }
   };
 
   return (
