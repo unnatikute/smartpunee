@@ -1,0 +1,84 @@
+.city-page {
+  padding: 20px;
+  max-width: 1000px;
+  margin: auto;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.city-title {
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.city-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.city-search-input,
+.city-category-select {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 250px;
+}
+
+.shop-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.shop-card {
+  background: #fff;
+  border: 1px solid #e2e2e2;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.2s;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.shop-card:hover {
+  transform: translateY(-5px);
+}
+
+.shop-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.shop-details {
+  padding: 15px;
+}
+
+.shop-name {
+  font-size: 20px;
+  margin: 0 0 5px;
+  color: #2c3e50;
+}
+
+.shop-meta {
+  color: #7f8c8d;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.shop-offer {
+  font-weight: bold;
+  color: #e74c3c;
+  font-size: 16px;
+}
+
+.no-results {
+  text-align: center;
+  font-size: 18px;
+  color: #999;
+  padding: 40px 0;
+}
