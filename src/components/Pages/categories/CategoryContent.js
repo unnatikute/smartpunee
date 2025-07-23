@@ -4,11 +4,20 @@ import './categoryContent.css';
 const CategoryContent = ({ category }) => {
   return (
     <div className="content-area">
-      <h3>{category.name}</h3>
+      <div className="category-header">
+        {category.icon && <span className="category-icon">{category.icon}</span>}
+        <h3>{category.name}</h3>
+      </div>
+
       <div className="sub-grid">
         {category.subcategories.map((item, idx) => (
-          <div key={idx} className="sub-item">
-            <img src={item.image} alt={item.name} />
+          <div key={`${item.name}-${idx}`} className="sub-item">
+            <img
+              src={item.image}
+              alt={item.name}
+              loading="lazy"
+              onError={(e) => (e.target.src = "/images/placeholder.jpg")} // fallback image
+            />
             <p>{item.name}</p>
           </div>
         ))}

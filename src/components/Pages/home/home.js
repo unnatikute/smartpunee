@@ -281,7 +281,7 @@ const Home = () => {
           <p>
             Join LocalOffers to promote your offers and attract more customers.
           </p>
-          <button onClick={() => (window.location.href = "/register")}>
+          <button onClick={() => (window.location.href = "/auth")}>
             Register Your Shop
           </button>
         </section>

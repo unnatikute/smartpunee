@@ -1,19 +1,35 @@
 // src/components/howitworks/Discover.js
 import React from 'react';
-import { Link,useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './howitworks.css';
 
-const Discover = () => {const navigate = useNavigate();
+const Discover = () => {
+  const navigate = useNavigate();
 
   const handleViewOffers = () => {
-    const isLoggedIn = localStorage.getItem('user'); // Example key
-    if (isLoggedIn) {
-      navigate('/');
+    const userData = JSON.parse(localStorage.getItem('user'));
+
+    if (userData && userData.role) {
+      switch (userData.role) {
+        case 'user':
+          navigate('/'); // user sees home/top offers
+          break;
+        case 'shop':
+          navigate('/shop-dashboard'); // shop owner sees dashboard
+          break;
+        case 'admin':
+          navigate('/admin'); // admin dashboard
+          break;
+        default:
+          navigate('/');
+          break;
+      }
     } else {
       alert('Please login to view top offers.');
       navigate('/login');
     }
   };
+
   return (
     <div className="how-it-works-page discover-page">
       <div className="discover-banner">
@@ -36,16 +52,16 @@ const Discover = () => {const navigate = useNavigate();
           className="discover-image"
         />
 
-       <div className="discover-cta">
-      <p>Ready to explore offers in your area?</p>
-      <button onClick={handleViewOffers} className="discover-btn">
-        View Top Offers
-      </button>
-    </div>
+        <div className="discover-cta">
+          <p>Ready to explore offers in your area?</p>
+          <button onClick={handleViewOffers} className="discover-btn">
+            View Top Offers
+          </button>
+        </div>
 
         <div className="shop-owner-promo">
           <p>Are you a shop owner?</p>
-          <Link to="/register" className="register-btn">Register Your Shop</Link>
+          <Link to="/login" className="register-btn">Register Your Shop</Link>
         </div>
       </div>
     </div>

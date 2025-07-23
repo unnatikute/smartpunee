@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import SidebarCategoryList from './SidebarCategoryList';
 import CategoryContent from './CategoryContent';
 import { categories } from './data/categories';
@@ -6,23 +6,27 @@ import './CategoryPage.css';
 import { useNavigate } from 'react-router-dom';
 
 const CategoryPage = () => {
-  const [selectedCategory, setSelectedCategory] = useState(categories[0]);
+  const [selectedCategory, setSelectedCategory] = useState(categories[0] || null);
   const navigate = useNavigate();
 
-  // 🔒 Login check on component mount
+  // 🔒 Only allow authenticated users with "user" role
   useEffect(() => {
     const isLoggedIn = localStorage.getItem('isLoggedIn');
-    if (!isLoggedIn || isLoggedIn !== 'true') {
-      navigate('/login'); // Redirect to login if not authenticated
+    const role = localStorage.getItem('role');
+
+    if (!isLoggedIn || isLoggedIn !== 'true' || role !== 'user') {
+      navigate('/login'); // Redirect to login for unauthenticated or wrong role
     }
   }, [navigate]);
-  
+
+  if (!selectedCategory) return <p>Loading categories...</p>;
+
   return (
     <div className="category-page">
       <SidebarCategoryList
         categories={categories}
         selected={selectedCategory.id}
-        onSelect={cat => setSelectedCategory(cat)}
+        onSelect={setSelectedCategory}
       />
       <CategoryContent category={selectedCategory} />
     </div>

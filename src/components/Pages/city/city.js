@@ -1,4 +1,4 @@
-import React, { useState , useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './city.css';
 
@@ -38,14 +38,21 @@ const City = () => {
   const [category, setCategory] = useState('All');
   const navigate = useNavigate();
 
-  // 🔒 Login check on component mount
+  // 🔒 Check role on mount
   useEffect(() => {
     const isLoggedIn = localStorage.getItem('isLoggedIn');
+    const role = localStorage.getItem('role'); // 'user', 'shop', or 'admin'
+
     if (!isLoggedIn || isLoggedIn !== 'true') {
-      navigate('/login'); // Redirect to login if not authenticated
+      navigate('/login');
+    } else if (role !== 'user') {
+      // Redirect based on role
+      if (role === 'shop') navigate('/shop/dashboard');
+      else if (role === 'admin') navigate('/admin/dashboard');
+      else navigate('/'); // unknown role
     }
   }, [navigate]);
-  
+
   const categories = ['All', ...new Set(shopData.map(shop => shop.category))];
 
   const filteredShops = shopData.filter(shop =>
