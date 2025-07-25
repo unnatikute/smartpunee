@@ -42,6 +42,7 @@ const AboutUs = () => {
       </div>
 
       <div className="about-section">
+<<<<<<< HEAD
         <div className="about-text">
         <h2>Meet Our Team</h2>
         <p>
@@ -51,6 +52,22 @@ const AboutUs = () => {
       </div>
       <div className="about-footer">
         <p>Thank you for supporting your local businesses! 🙌</p>
+=======
+        <h2>👩‍💻 Meet Our Team</h2>
+        <p>
+          We’re a passionate team from <strong>Pune</strong> — developers, designers, and local business advocates — working together to build a platform that supports small businesses and smart shoppers alike.
+        </p>
+        <div className="team-photos">
+          <img src="/images/team1.jpg" alt="Team Member 1" />
+          <img src="/images/team2.jpg" alt="Team Member 2" />
+          <img src="/images/team3.jpg" alt="Team Member 3" />
+          <img src="/images/team4.jpg" alt="Team Member 4" />
+        </div>
+      </div>
+
+      <div className="about-footer">
+        <p>🙌 Thank you for supporting your local businesses!</p>
+>>>>>>> 3f53586fe21b42ebb8e1e9bf53e85bf24b824853
       </div>
     </div>
   );

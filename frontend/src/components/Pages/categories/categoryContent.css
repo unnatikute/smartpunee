@@ -19,6 +19,7 @@
   object-fit: cover;
   border-radius: 8px;
 }
+<<<<<<< HEAD
 .shop-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -38,3 +39,5 @@
   height: auto;
   margin-top: 0.5rem;
 }
+=======
+>>>>>>> 3f53586fe21b42ebb8e1e9bf53e85bf24b824853

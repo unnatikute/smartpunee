@@ -7,9 +7,19 @@ const ShopSave = () => {
   const navigate = useNavigate();
 
   const handleBrowseShops = () => {
+<<<<<<< HEAD
     const isLoggedIn = localStorage.getItem('user');
     if (isLoggedIn) {
       navigate('/city'); // You can make this dynamic if needed
+=======
+    const userData = JSON.parse(localStorage.getItem('user'));
+    if (userData && userData.role === 'user') {
+      navigate('/city'); // Regular user sees local shops
+    } else if (userData && userData.role === 'shop') {
+      navigate('/shop/dashboard'); // Shop owners go to their dashboard
+    } else if (userData && userData.role === 'admin') {
+      navigate('/admin'); // Admin goes to admin dashboard
+>>>>>>> 3f53586fe21b42ebb8e1e9bf53e85bf24b824853
     } else {
       alert('⚠️ Please login to browse local shops.');
       navigate('/login');
@@ -47,7 +57,11 @@ const ShopSave = () => {
 
         <div className="shop-owner-promo">
           <p>Are you a shop owner? Get discovered by thousands!</p>
+<<<<<<< HEAD
           <Link to="/register" className="register-btn">Register Your Shop</Link>
+=======
+          <Link to="/login" className="register-btn">Register Your Shop</Link>
+>>>>>>> 3f53586fe21b42ebb8e1e9bf53e85bf24b824853
         </div>
       </div>
     </div>

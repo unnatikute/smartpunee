@@ -242,7 +242,11 @@ const Home = () => {
             <div className="step-box">
               <h3>
                 🛒{" "}
-                <Link to="/how-it-works/shop-save" className="step-link">
+
+                <Link to="/how-it-works/shop-save" className="step-link" />
+
+                <Link to="/how-it-works/shopSave" className="step-link">
+
                   Shop & Save
                 </Link>
               </h3>
@@ -281,7 +285,11 @@ const Home = () => {
           <p>
             Join LocalOffers to promote your offers and attract more customers.
           </p>
-          <button onClick={() => (window.location.href = "/register")}>
+
+          <button onClick={() => (window.location.href = "/register")} />
+
+          <button onClick={() => (window.location.href = "/login")}>
+
             Register Your Shop
           </button>
         </section>

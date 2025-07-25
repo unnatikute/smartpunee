@@ -1,15 +1,32 @@
 // src/components/howitworks/Browse.js
 import React from 'react';
 import { Link,useNavigate } from 'react-router-dom';
+
+import { Link, useNavigate } from 'react-router-dom';
+
 import './howitworks.css';
 
 const Browse = () => {
   const navigate = useNavigate();
 
   const handleBrowseClick = () => {
-    const isLoggedIn = localStorage.getItem('user'); // Check if user is logged in
-    if (isLoggedIn) {
-      navigate('/categories');
+    const user = JSON.parse(localStorage.getItem('user'));
+
+    if (user && user.role) {
+      const role = user.role.toLowerCase();
+
+      if (role === 'user') {
+        navigate('/categories');
+      } else if (role === 'shop') {
+        alert('Shop owners cannot browse like users. Redirecting to your dashboard.');
+        navigate('/shop-dashboard');
+      } else if (role === 'admin') {
+        alert('Admins are not allowed to browse offers like users.');
+        navigate('/admin-dashboard');
+      } else {
+        alert('Invalid role. Please login again.');
+        navigate('/login');
+      }
     } else {
       alert('Please login to browse categories.');
       navigate('/login');
@@ -39,13 +56,15 @@ const Browse = () => {
         />
 
         <div className="browse-cta">
-        <p>Start browsing now and never miss a local deal again!</p>
-        <button onClick={handleBrowseClick} className="discover-btn">Browse by Category</button>
-      </div>
+          <p>Start browsing now and never miss a local deal again!</p>
+          <button onClick={handleBrowseClick} className="discover-btn">
+            Browse by Category
+          </button>
+        </div>
 
         <div className="shop-owner-promo">
           <p>Are you a shop owner? Get discovered by thousands!</p>
-          <Link to="/register" className="register-btn">Register Your Shop</Link>
+          <Link to="/login" className="register-btn">Register Your Shop</Link>
         </div>
       </div>
     </div>
