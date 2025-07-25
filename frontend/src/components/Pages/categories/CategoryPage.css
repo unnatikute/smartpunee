@@ -98,3 +98,26 @@
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
   }
 }
+.filter-panel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+  padding: 10px;
+  background: #f7f7f7;
+  border-radius: 8px;
+  justify-content: center;
+}
+
+.search-input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  flex: 1 1 200px;
+}
+
+.filter-panel select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
