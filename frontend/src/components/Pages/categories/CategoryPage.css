@@ -1,16 +1,11 @@
 /* Full page layout */
 .category-page {
   display: flex;
-<<<<<<< HEAD
-=======
-  flex-direction: row;
->>>>>>> 3f53586fe21b42ebb8e1e9bf53e85bf24b824853
   min-height: 100vh;
   font-family: 'Segoe UI', sans-serif;
   background-color: #f9f9f9;
 }
 
-<<<<<<< HEAD
 /* Left sidebar styles (handled in sidebar.css) */
 .sidebar {
   width: 180px;
@@ -23,21 +18,6 @@
 }
 
 /* Right content area (CategoryContent) */
-=======
-/* Sidebar styles */
-.sidebar {
-  width: 200px;
-  background-color: #fff;
-  border-right: 1px solid #ddd;
-  padding: 20px 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  font-size: 16px;
-}
-
-/* Main content area */
->>>>>>> 3f53586fe21b42ebb8e1e9bf53e85bf24b824853
 .content-area {
   flex: 1;
   padding: 30px 20px;
@@ -45,26 +25,16 @@
   overflow-y: auto;
 }
 
-<<<<<<< HEAD
 /* Heading for selected category */
 .content-area h3 {
   font-size: 22px;
   margin-bottom: 20px;
   color: #333;
-=======
-/* Category title */
-.content-area h3 {
-  font-size: 24px;
-  margin-bottom: 24px;
-  color: #222;
-  font-weight: 600;
->>>>>>> 3f53586fe21b42ebb8e1e9bf53e85bf24b824853
 }
 
 /* Grid of subcategories */
 .sub-grid {
   display: grid;
-<<<<<<< HEAD
   grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
   gap: 24px;
 }
@@ -90,96 +60,12 @@
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 10px;
-=======
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  gap: 24px;
-}
-
-/* Subcategory card */
-.sub-item {
-  text-align: center;
-  border-radius: 12px;
-  padding: 12px;
-  background: #ffffff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  cursor: pointer;
-}
-
-.sub-item:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-}
-
-/* Subcategory image */
-.sub-item img {
-  width: 100%;
-  height: 110px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 8px;
->>>>>>> 3f53586fe21b42ebb8e1e9bf53e85bf24b824853
 }
 
 /* Subcategory label */
 .sub-item p {
-<<<<<<< HEAD
   font-size: 14px;
   font-weight: 500;
   color: #444;
   margin: 0;
 }
-=======
-  font-size: 15px;
-  font-weight: 500;
-  color: #333;
-  margin: 0;
-}
-
-/* Responsive: mobile view */
-@media screen and (max-width: 768px) {
-  .category-page {
-    flex-direction: column;
-  }
-
-  .sidebar {
-    width: 100%;
-    flex-direction: row;
-    overflow-x: auto;
-    padding: 10px;
-    border-right: none;
-    border-bottom: 1px solid #ddd;
-  }
-
-  .content-area {
-    padding: 20px 15px;
-  }
-
-  .sub-grid {
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  }
-}
-.filter-panel {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 20px 0;
-  padding: 10px;
-  background: #f7f7f7;
-  border-radius: 8px;
-  justify-content: center;
-}
-
-.search-input {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  flex: 1 1 200px;
-}
-
-.filter-panel select {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
->>>>>>> 3f53586fe21b42ebb8e1e9bf53e85bf24b824853

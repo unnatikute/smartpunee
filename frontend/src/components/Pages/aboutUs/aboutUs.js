@@ -42,17 +42,6 @@ const AboutUs = () => {
       </div>
 
       <div className="about-section">
-<<<<<<< HEAD
-        <div className="about-text">
-        <h2>Meet Our Team</h2>
-        <p>
-          We're a passionate team of developers, designers, and local business supporters from Pune, working together to make shopping smarter and more local!
-        </p>
-      </div>
-      </div>
-      <div className="about-footer">
-        <p>Thank you for supporting your local businesses! 🙌</p>
-=======
         <h2>👩‍💻 Meet Our Team</h2>
         <p>
           We’re a passionate team from <strong>Pune</strong> — developers, designers, and local business advocates — working together to build a platform that supports small businesses and smart shoppers alike.
@@ -67,7 +56,6 @@ const AboutUs = () => {
 
       <div className="about-footer">
         <p>🙌 Thank you for supporting your local businesses!</p>
->>>>>>> 3f53586fe21b42ebb8e1e9bf53e85bf24b824853
       </div>
     </div>
   );

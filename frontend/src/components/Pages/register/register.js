@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './register.css';
+import Header from '../../header/header';
 
 const Register = () => {
   const [form, setForm] = useState({
@@ -80,9 +81,11 @@ const Register = () => {
   };
 
   return (
-    <div className="register-container">
-      <h2>Register Your Shop</h2>
-      <p>Join LocalOffers to promote your offers and attract more customers.</p>
+    <>
+      
+      <div className="register-container">
+        <h2>Register Your Shop</h2>
+        <p>Join LocalOffers to promote your offers and attract more customers.</p>
 
       {submitted ? (
         <div className="success-message">✅ Your shop has been registered successfully!</div>
@@ -148,6 +151,7 @@ const Register = () => {
         </form>
       )}
     </div>
+    </>
   );
 };
 
