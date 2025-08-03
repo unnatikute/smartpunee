@@ -3,6 +3,8 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const db = require('../db');
+require('dotenv').config();
+
 
 const multer = require('multer');
 const path = require('path');
@@ -55,11 +57,8 @@ router.post(
 
         const userId = result.insertId;
 
-        const token = jwt.sign(
-          { id: userId, role, email },
-          'SECRET_KEY',
-          { expiresIn: '1h' }
-        );
+        const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '1h' });
+
 
         return res.json({
           message: 'User registered successfully!',
