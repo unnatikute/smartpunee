@@ -66,6 +66,13 @@ const AuthPage = () => {
                     }),
                 });
 
+                if (!res.ok) {
+                    const text = await res.text();  // fallback to see HTML error
+                    console.error('Server returned:', text);
+                    setError(`Server error ${res.status}`);
+                    return;
+                }
+
                 const data = await res.json();
 
                 if (res.ok) {
@@ -146,7 +153,7 @@ const AuthPage = () => {
                 <select name="role" value={form.role} onChange={handleChange}>
                     <option value="user">User</option>
                     <option value="shopOwner">Shop Owner</option>
-                 
+
                 </select>
 
                 <input
